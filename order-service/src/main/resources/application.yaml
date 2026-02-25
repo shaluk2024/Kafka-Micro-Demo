@@ -3,6 +3,8 @@ spring:
     name: order-service
   kafka:
     bootstrap-servers: kafka:9092
+#    bootstrap-servers: localhost:9092
+
     properties:
       spring.json.add.type.headers: false
 
