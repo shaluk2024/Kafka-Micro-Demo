@@ -58,11 +58,11 @@ Note: When running inside Docker, use kafka:9092, not localhost:9092.
 
 Producer (order-service):
 
-kafkaTemplate.send("order-created", order);
+kafkaTemplate.send("order-topic", order);
 
 Consumer (notification-service):
 
-@KafkaListener(topics = "order-created", groupId = "notify-group") public
+@KafkaListener(topics = "order-topic", groupId = "notify-group") public
 void listen(Order order) { log.info("Received Order:", order.getProduct()); }
 
 ------------------------------------------------------------------------
@@ -73,9 +73,9 @@ This project demonstrates: - Kafka producer and consumer setup -
 Event-driven microservices communication - Docker-based local setup -
 Proper Kafka networking configuration
 
-=========================================================================
-Kafka with spring boot locally without docker
-=========================================================================
+=========================================================
+Run Kafka with spring boot locally without docker
+=========================================================
 1. Download kafka - Apache kafka(binary)
 2. Unzip the folder -> Rename the folder to kafka for conviniance.
 3. Open a terminal -> Go to kafka folder and run commands:
